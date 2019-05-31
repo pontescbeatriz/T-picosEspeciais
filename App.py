@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import sqlite3
 
 app = Flask(__name__)
@@ -31,6 +31,20 @@ def getAlunosByID(id):
 @app.route("/aluno", methods = ['POST'])
 def setAluno():
     print('Cadastrando o aluno')
+    nome = request.form["nome"]
+    nascimento = request.form["nascimento"]
+    matricula = request.form["matricula"]
+    cpf = request.form["cpf"]
+
+    conn = sqlite3.connect("escola.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO tb_aluno(nome, matricula, cpf, nascimento)
+        VALUES (?, ?, ?, ?);
+        """, (nome, matricula, cpf, nascimento))
+
+    conn.commit()
+    conn.close()
     return ('Cadastrado com sucesso', 200)
 
 if(__name__ == '__main__'):
