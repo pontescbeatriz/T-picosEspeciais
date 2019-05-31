@@ -16,15 +16,14 @@ cursor.execute("""
 
  );
 """)
- print ("tabela tb_aluno foi criada.")
+print ("tabela tb_aluno foi criada.")
 
 cursor.execute("""
  CREATE TABLE tb_curso (
   id_curso INTERGER NOT NULL PRIMARY KEY  AUTOINCREMENT,
    nome VARCHAR(45) NOT NULL,
    Turno VARCHAR(1)
-
- );
+   );
 """)
 print ("tabela tb_CURSO foi criada.")
 
@@ -39,3 +38,4 @@ cursor.execute("""
  );
 """)
 print ("tabela tb_turma foi criada.")
+
