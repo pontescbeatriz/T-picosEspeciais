@@ -45,18 +45,15 @@ def getEscolasByID(id):
             "cidade": linha[3]
         }
     conn.close()
-    return jsonify(linha)
+    return jsonify(escolas)
     return("Executado!", 200)
 
 @app.route("/escola", methods=['POST'])
 def setEscola():
-    print('Cadastrando a escola')
-    nome = request.form["nome"]
-    print(nome)
-    logradouro = request.form["logradouro"]
-    print(logradouro)
-    cidade = request.form["cidade"]
-    print(cidade)
+    escola = request.get_json()
+    nome = escola ["nome"]
+    logradouro = escola ["logradouro"]
+    cidade = escola ["cidade"]
 
     conn = sqlite3.connect('IFPB.db')
     cursor = conn.cursor()
@@ -68,7 +65,9 @@ def setEscola():
     conn.commit()
     conn.close()
 
-    return("Inserido com sucesso!", 200)
+    id = cursoor.lastrowid
+    escola ["id"] = idreturn jsonify(aluno)
+
 
 @app.route("/alunos", methods=['GET'])
 def getAlunos():
@@ -113,20 +112,16 @@ def getAlunosByID(id):
         "nascimento": linha[4]
     }
     conn.close()
-    return jsonify(linha)
+    return jsonify(alunos)
     return("Executado!", 200)
 
 @app.route("/aluno", methods=['POST'])
 def setAluno():
-    print('Cadastrando o aluno')
-    nome = request.form["nome"]
-    print(nome)
-    matricula = request.form["matricula"]
-    print(matricula)
-    cpf = request.form["cpf"]
-    print(cpf)
-    nascimento = request.form["nascimento"]
-    print(nascimento)
+    aluno = request.get_json()
+    nome = aluno ['nome']
+    matricula = aluno ['matricula']
+    cpf = aluno ['cpf']
+    nascimento = aluno ['nascimento']
 
     conn = sqlite3.connect('IFPB.db')
     cursor = conn.cursor()
@@ -138,7 +133,9 @@ def setAluno():
     conn.commit()
     conn.close()
 
-    return("Executado!", 200)
+    id = cursor.lastrowid
+    aluno ["id"] = id
+    return jsonify(aluno)
 
 @app.route("/cursos", methods=['GET'])
 def getCursos():
@@ -181,16 +178,14 @@ def getCursosByID(id):
     }
 
     conn.close()
-    return jsonify(linha)
+    return jsonify(cursos)
     return("Executado!", 200)
 
 @app.route("/curso", methods=['POST'])
 def setCurso():
-    print('Cadastrando o curso')
-    nome = request.form["nome"]
-    print(nome)
-    turno = request.form["turno"]
-    print(turno)
+    curso = request.get_json()
+    nome = curso ['nome']
+    turno = curso ['turno']
 
     conn = sqlite3.connect('IFPB.db')
     cursor = conn.cursor()
@@ -202,7 +197,11 @@ def setCurso():
     conn.commit()
     conn.close()
 
-    return("Executado!", 200)
+    id = cursor.lastrowid
+    curso ["id"] = id
+    return jsonify(curso)
+
+
 
 @app.route("/turmas", methods=['GET'])
 def getTurmas():
@@ -246,16 +245,14 @@ def getTurmasByID(id):
 
 
     conn.close()
-    return jsonify(linha)
+    return jsonify(turmas)
     return("Executado!", 200)
 
 @app.route("/turma", methods=['POST'])
 def setTurma():
-    print('Cadastrando a turma')
-    nome = request.form["nome"]
-    print(nome)
-    curso = request.form["curso"]
-    print(curso)
+    turma = request.get_json()
+    nome = turma ['nome']
+    curso = turma ['curso']
 
     conn = sqlite3.connect('IFPB.db')
     cursor = conn.cursor()
@@ -267,7 +264,10 @@ def setTurma():
     conn.commit()
     conn.close()
 
-    return("Executado!", 200)
+    id = cursor.lastrowid
+    turma ["id"] = id
+    return jsonify(turma)
+
 
 @app.route("/disciplinas", methods=['GET'])
 def getDisciplinas():
@@ -308,14 +308,12 @@ def getDisciplinasByID(id):
         }
 
     conn.close()
-    return jsonify(linha)
+    return jsonify(disciplinas)
     return("Executado!", 200)
 
 @app.route("/disciplina", methods=['POST'])
 def setDisciplina():
-    print('Cadastrando a disciplina')
-    nome = request.form["nome"]
-    print(nome)
+  nome = disciplinas ['nome']
 
     conn = sqlite3.connect('IFPB.db')
     cursor = conn.cursor()
@@ -327,7 +325,10 @@ def setDisciplina():
     conn.commit()
     conn.close()
 
-    return("Executado!", 200)
+    id = cursor.lastrowid
+    disciplinas["id"] = id
+    return jsonify(disciplinas)
+
 
 if(__name__ == '__main__'):
     app.run(host='0.0.0.0', debug=True, use_reloader=True)
