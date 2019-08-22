@@ -1,0 +1,23 @@
+<script type="text/javascript">
+			let nome = "João Miguel";
+			console.log(nome);
+
+			let nota = 10;
+
+			if(nota >=7) {
+				console.log("Aprovado");
+			} else {
+				console.log("Reprovado");
+			}
+
+			let i = 0;
+			while(i <= 10) {
+				console.log(i);
+				i++;
+			}
+		</script>
+    
+    
+    
+    
+    vai dentro de header no index
