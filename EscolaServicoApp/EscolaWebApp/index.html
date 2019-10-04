@@ -58,6 +58,106 @@
 						Ao final do ano letivo o sistema deverá ter implementado também JavaScript e cadastrar no banco de dados todas as informações inseridas diretamente nos formulários.
 					</p>
 				</div>
+				    <!-- EscolaWebApp - Aplicação Angular -->
+      <script src="js/app.js" type="text/javascript">
+
+        let nome = "João da Silva";
+        console.log(nome);
+        let nota = 7;
+        if(nota >= "7") {
+          console.log("Aprovado");
+        } else {
+          console.log("Reprovado");
+        }
+
+        let i = 0;
+        while (i <=10) {
+          console.log(i);
+          i++;
+
+        }
+
+        for (i = 0; i <=10; i++){
+          console.log(i);
+        }
+
+        let nomes = ["Cauã", "nasce", "logo"];
+        for (nome of nomes){
+          console.log(nome);
+        }
+
+        for(posicao in nomes) {
+          console.log(posicao);
+          console.log(nomes[posicao]);
+        }
+        function somar(v1, v2) {
+          let resultado = v1 + v2;
+          return resultado;
+        }
+
+        let r = somar(5,8);
+        console.log(r);
+
+        let exibirValor = function(valor) {
+          console.log(valor);
+        }
+
+        let resultado = somar (5,8);
+        exibirValor(resultado);
+
+        let aluno = {
+          nome:"Maria da Paz",
+          matricula: "201910000",
+          cpf: "100.200.300-50",
+          endereco: {
+            logradouro:"Buraco do Afonso",
+            complemento:"Perto do chapéu",
+            cep:"58000-000",
+            numero:"90",
+            bairro:"Centro"
+          }
+        };
+
+        console.log(aluno.nome);
+        console.log(aluno.endereco.logradouro);
+
+
+
+      </script>
+      <link rel="stylesheet" href="CSS/index.css" type="text/css"/>
+      <link rel="stylesheet" href="CSS/menu.css" type="text/css"/>
+
+    </head>
+    <body>
+      <div class="meu-container">
+        <header ng-controller="MeuSegundoController">
+          Projeto Integrado – Tópicos Especiais e Programação Web.
+          <nav>
+            <ul class="navigation">
+              <li><a href="aluno.html">Aluno</a></li>
+              <li><a href="campus.html">Campus</a></li>
+              <li><a href="curso.html">Curso</a></li>
+              <li><a href="disciplina.html">Disciplina</a></li>
+              <li><a href="endereco.html">Endereço</a></li>
+              <li><a href="escola.html">Escola</a></li>
+              <li><a href="turma.html">Turma</a></li>
+              <li><a href="turno.html">Turno</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main ng-controller="MeuPrimeiroController">
+          <input type="text" ng-model="logradouro" name="logradouro" value="">
+          <h1> Meu logradouro é logradouro</h1>
+          
+          <input type="text" ng-model="numero1">
+
+          <input type="text" ng-model="numero2">
+		
+	  <input type="button">
+	  <h2>{{resultado}}</h2>
+
+          
+        </main>
 			</main>
 			<footer>
 				<h6> Projeto - IFPB GBA - Beatriz Pontes e Emanuelle Alves </h6>
