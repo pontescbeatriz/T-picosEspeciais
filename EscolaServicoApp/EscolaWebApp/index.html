@@ -61,69 +61,7 @@
 				    <!-- EscolaWebApp - Aplicação Angular -->
       <script src="js/app.js" type="text/javascript">
 
-        let nome = "João da Silva";
-        console.log(nome);
-        let nota = 7;
-        if(nota >= "7") {
-          console.log("Aprovado");
-        } else {
-          console.log("Reprovado");
-        }
-
-        let i = 0;
-        while (i <=10) {
-          console.log(i);
-          i++;
-
-        }
-
-        for (i = 0; i <=10; i++){
-          console.log(i);
-        }
-
-        let nomes = ["Cauã", "nasce", "logo"];
-        for (nome of nomes){
-          console.log(nome);
-        }
-
-        for(posicao in nomes) {
-          console.log(posicao);
-          console.log(nomes[posicao]);
-        }
-        function somar(v1, v2) {
-          let resultado = v1 + v2;
-          return resultado;
-        }
-
-        let r = somar(5,8);
-        console.log(r);
-
-        let exibirValor = function(valor) {
-          console.log(valor);
-        }
-
-        let resultado = somar (5,8);
-        exibirValor(resultado);
-
-        let aluno = {
-          nome:"Maria da Paz",
-          matricula: "201910000",
-          cpf: "100.200.300-50",
-          endereco: {
-            logradouro:"Buraco do Afonso",
-            complemento:"Perto do chapéu",
-            cep:"58000-000",
-            numero:"90",
-            bairro:"Centro"
-          }
-        };
-
-        console.log(aluno.nome);
-        console.log(aluno.endereco.logradouro);
-
-
-
-      </script>
+        
       <link rel="stylesheet" href="CSS/index.css" type="text/css"/>
       <link rel="stylesheet" href="CSS/menu.css" type="text/css"/>
 
@@ -149,11 +87,12 @@
           <input type="text" ng-model="logradouro" name="logradouro" value="">
           <h1> Meu logradouro é logradouro</h1>
           
-          <input type="text" ng-model="numero1">
+          <input type="number" ng-model="numero1">
 
-          <input type="text" ng-model="numero2">
+          <input type="number" ng-model="numero2">
 		
-	  <button ng-click="somar()" value = "Somar">
+	  <button ng-click="somar()" > Somar</button>
+	  
 	  <h2>{{resultado}}</h2>
 
           
