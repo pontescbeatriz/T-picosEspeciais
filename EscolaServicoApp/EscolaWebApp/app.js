@@ -1,18 +1,22 @@
 // Inicializar o módulo.
-let nomeApp = 'EscolaWebApp'
-let modulos = [];
-var app = angular.module(nomeApp, modulos );
 
-// Estrutura básica para uma função no controlador.
-var MeuPrimeiroController = function ($scope){
-  $scope.logradouro = "Outro valor";
+let nomeApp = 'EscolaWebApp';
+let modulos = []
+var app = angular.module(nomeApp, modulos);
+
+let nomeDaFuncao = function($scope){
+  $scope.logradouro = "Outro Valor";
+
+  $scope.numero1 = 0;
+  $scope.numero2 = 0;
+
+  $scope.somar = function(numero1, numero2){
+    $scope.resultado = numero1 + numero2 ;
+  }
+
+  function somar(numero1, numero2){
+    return numero1 + numero2;
+  }
 }
 
-app.controller('MeuPrimeiroController', meuPrimeiroController);
-
-var MeuSegundoController = function ($scope){
-  $scope.logradouro = "Outro valor";
-}
-
-app.controller('MeuSegundoController', meuSegundoController);
-
+app.controller('MeuPrimeiroController', nomeDaFuncao);
