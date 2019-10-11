@@ -5,7 +5,7 @@ let modulos = []
 var app = angular.module(nomeApp, modulos);
 
 
-app.controller('MeuPrimeiroController', nomeDaFuncao);
+app.controller('MeuPrimeiroController', meuPrimeiroController);
 
 app.controller('AlunoController', alunoController);
 
