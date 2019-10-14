@@ -26,11 +26,21 @@
       <form class="formturma formulario" action="http://localhost:5000/turma" method="POST">
         <div class="form-group">
           <label for="nome">Nome da Turma: </label>
-          <input type="text" class="form-control" name="nome" ng-model="nome">
+          <input type="text" class="form-control" name="nome" ng-model="nome" 
+		  ng-minlength necessário = " 3 "  ng-maxlength = " 25 " >
+            < div  ng-show = " turmaForm.nome. $ invalid && turmaForm.nome. $ dirty "
+              class = " alerta alerta-perigo " >
+              Por favor, preencha o campo Nome da Turma! ;)
+            </ div >
         </div>
         <div class="form-group">
           <label for="id_curso">Curso: </label>
-          <input type="text" class="form-control" name="id_curso" ng-model="id_curso">
+          <input type="text" class="form-control" name="id_curso" ng-model="id_curso" 
+		  ng-minlength necessário = " 3 "  ng-maxlength = " 25 " >
+            < div  ng-show = " turmaForm.nome. $ invalid && turmaForm.nome. $ dirty "
+              class = " alerta alerta-perigo " >
+              Por favor, preencha o campo Curso! ;)
+            </ div >
         </div>
         <input type= 'submit' name='Cadastrar' value= 'Cadastrar' class="btn btn-dark btn-lg btn-block">
       </form>
