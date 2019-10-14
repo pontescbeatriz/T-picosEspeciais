@@ -27,15 +27,30 @@
       <form class="formescola formulario" action="http://localhost:5000/escola" method="POST">
         <div class="form-group">
           <label for="nome">Nome da Escola: </label>
-          <input type="text" class="form-control" name="nome" ng-model="nome">
+          <input type="text" class="form-control" name="nome" ng-model="nome" 
+		  ng-minlength necessário = " 3 "  ng-maxlength = " 25 " >
+            < div  ng-show = " escolaForm.nome. $ invalid && escolaForm.nome. $ dirty "
+              class = " alerta alerta-perigo " >
+              Por favor, preencha o campo Nome da Escola! ;)
+            </ div >
         </div>
         <div class="form-group">
           <label for="id_endereco">Endereço: </label>
-          <input type="text" class="form-control" name="id_endereco" ng-model="id_endereco">
+          <input type="text" class="form-control" name="id_endereco" ng-model="id_endereco" 
+		  ng-minlength necessário = " 3 "  ng-maxlength = " 25 " >
+            < div  ng-show = " escolaForm.nome. $ invalid && escolaForm.nome. $ dirty "
+              class = " alerta alerta-perigo " >
+              Por favor, preencha o campo Endereço! ;)
+            </ div >
         </div>
         <div class="form-group">
           <label for="id_campus">Campus: </label>
-          <input type="text" class="form-control" name="id_campus" ng-model="id_campus">
+          <input type="text" class="form-control" name="id_campus" ng-model="id_campus" 
+		  ng-minlength necessário = " 3 "  ng-maxlength = " 25 " >
+            < div  ng-show = " escolaForm.nome. $ invalid && escolaForm.nome. $ dirty "
+              class = " alerta alerta-perigo " >
+              Por favor, preencha o campo Campus! ;)
+            </ div >
         </div>
         <input type= 'submit' name='Cadastrar' value= 'Cadastrar' class="btn btn-dark btn-lg btn-block">
       </form>
