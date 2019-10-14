@@ -28,7 +28,12 @@
       <form class="formturno formulario" action="http://localhost:5000/turno" method="POST">
         <div class="form-group">
           <label for="nome">Turno: </label>
-          <input type="text" class="form-control" name="nome" ng-model="nome">
+          <input type="text" class="form-control" name="nome" ng-model="nome" 
+                  ng-minlength necessário = " 3 "  ng-maxlength = " 25 " >
+            < div  ng-show = " turnoForm.nome. $ invalid && turnoForm.nome. $ dirty "
+              class = " alerta alerta-perigo " >
+              Por favor, preencha o campo Turno! ;)
+            </ div >
         </div>
         <input type= 'submit' name='Cadastrar' value= 'Cadastrar' class="btn btn-dark btn-lg btn-block">
       </form>
